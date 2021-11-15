@@ -17,7 +17,7 @@ const httpServer = createServer(app.callback())
 
 const io = new Server(httpServer, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://demo.xulin.fun',
     methods: ['GET', 'POST']
   }
 })
