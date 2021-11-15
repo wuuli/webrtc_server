@@ -35,10 +35,10 @@ io.on('connection', socket => {
     logger.debug(`the user number of room (${room}) is: ${userCount}`)
 
     if (userCount <= 2) {
-      socket.emit('joined', room, socket.id)
+      socket.emit('joined', room, socket.id, userCount)
 
       if (userCount > 1) {
-        socket.to(room).emit('other_join', room, socket.id)
+        socket.to(room).emit('other_join', room, socket.id, userCount)
       }
     } else {
       socket.leave(room)
